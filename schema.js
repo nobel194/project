@@ -16,14 +16,4 @@ blog.save(function (err,createBlog){
 	}
 	else console.log('created',createBlog);
 }) 
-
-function dba(){
-	mongoose.db("mongodb://localhost:27017/myapp");
-	return mongoose.connection;
-}
-
-dba()
-.on('error', function(){console.log('Database connection error',err)})
-.on('connected',function(){AudioListener()});
-
-module.exports=Blog;
+module.exports = Blog;
