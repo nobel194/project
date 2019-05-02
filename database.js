@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
-const port = 3000;
-const connection = mongoose.connect('mongodb://localhost:27017/myapp', {useNewUrlParser: true});
-console.log(connection);
-const user=require('./database2');
+mongoose.connect('mongodb://localhost:27017/myapp', {useNewUrlParser: true});
 const db = mongoose.connection;
-db.on('error', function(err) {console.log('Database connection error',err)});
-db.once('connected', function() {
-  console.log("we're connected!");
-});
+function connect() {
+	db.on('error', function(err) {console.log('Database connection error',err)});
+	db.once('connected', function() {
+	  console.log("connected to mongodb!");
+	});
+}
 
+module.exports = connect;
