@@ -4,17 +4,18 @@ const db = require('./database.js');
 
 const app = express();
 
+const bodyParser = require('body-parser');
+
 app.get('/',function(request, response){
 	response.send('Hello World');
 })
 
 app.get('/blogs',function(req, res){
 	res.send({name: ['Ram',"Shyam"],roll:3});
-
 })
 
 app.post('/blogs',function(request, response){
-	student = request.body;
+	student = request.bodyParser;
 	console.log(request);
 	response.send('created user');
 })
