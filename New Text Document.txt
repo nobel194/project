@@ -1,0 +1,8 @@
+operation 	url			method
+
+list		/students		GET
+create		/students		POST
+create form	/students/new		GET
+update		/students/:id		PUT/PATCH
+update form	/students/:id/edit	GET
+delete		/students/:id		DELETE

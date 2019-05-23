@@ -1,10 +1,15 @@
 const bodyParser = require('body-parser');
 const express = require('express');
+const path = require('path');
+const pug = require('pug');
 
 const db = require('./database.js');
 const Routes = require('./route.js');
 
 const app = express();
+
+app.set('view engine','pug');
+app.set('views', path.join(__dirname, 'pugs'));
 
 app.use(bodyParser.json());
 app.use(Routes);
