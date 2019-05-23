@@ -8,7 +8,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.get('/', function(request, response){
-	response.send('Hello World');
+	response.render('form');
 })
 
 app.get('/blogs', function(request, response){
